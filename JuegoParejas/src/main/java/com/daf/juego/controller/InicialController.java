@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/daf")
 public class InicialController {
 	
 	@RequestMapping(value = { "/"}, method = RequestMethod.GET)

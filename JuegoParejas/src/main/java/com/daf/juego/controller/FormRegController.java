@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.daf.juego.dto.DatosUsuario;
 
 @Controller
-@RequestMapping("/daf")
+@RequestMapping("/")
 public class FormRegController {
 
 	@RequestMapping(value = { "/formularioRegistro"}, method = RequestMethod.GET)
@@ -31,7 +31,7 @@ public class FormRegController {
 		return "registroOk";
 	}
 
-	@RequestMapping(value = { "/products"}, method = RequestMethod.GET)
+	/*@RequestMapping(value = { "/products"}, method = RequestMethod.GET)
 	public String productsPage(ModelMap model) {
 		return "products";
 	}
@@ -39,5 +39,5 @@ public class FormRegController {
 	@RequestMapping(value = { "/contactus"}, method = RequestMethod.GET)
 	public String contactUsPage(ModelMap model) {
 		return "contactus";
-	}
+	}*/
 }
