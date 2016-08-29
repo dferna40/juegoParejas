@@ -2,7 +2,7 @@
 
 <c:url value="/formularioRegistro/manejar" var="destino" />
 <form:form method="post" action="${destino}" commandName="datosUsuario">
-	<h1>Formulario registro</h1>
+	<h1>Rellena estos datos para realizar el registro en el juego:</h1>
 	<table>
 		<tbody>
 			<tr>
