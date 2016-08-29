@@ -18,8 +18,9 @@ public class ValidadorDatosUsuario implements Validator {
 		
 		DatosUsuario datosUsuario = (DatosUsuario) target;
 		
-		// la matrícula es obligatoria
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nombre", "El nombre es obligatorio");
+		// El nombre es obligatoria
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nombre","El nombre es obligatorio");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "clave", "La clave no puede ser vacia");
 	}
 
 }

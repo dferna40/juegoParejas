@@ -1,4 +1,4 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 
 <c:url value="/formularioRegistro/manejar" var="destino" />
 <form:form method="post" action="${destino}" commandName="datosUsuario">
