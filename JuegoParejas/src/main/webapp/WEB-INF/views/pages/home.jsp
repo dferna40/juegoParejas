@@ -1,1 +1,1 @@
-<h2>Welcome to Home page</h2>
+<h1>Bienvenido al juego de parejas, un juego para desarrollar tu agilidad mental</h1>

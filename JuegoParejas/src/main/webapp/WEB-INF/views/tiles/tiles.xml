@@ -13,28 +13,35 @@
        <put-attribute name="footer" value="/WEB-INF/views/tiles/template/defaultFooter.jsp" />  
    </definition>  
  
-   <!-- Home Page -->
+   <!-- Pagina principal -->
    <definition name="home" extends="base-definition">  
        <put-attribute name="title" value="Welcome" />  
        <put-attribute name="body" value="/WEB-INF/views/pages/home.jsp" />  
    </definition> 
     
     <!-- Pagina de registro -->
-   <definition name="formularioRegistro" extends="base-definition">  
+   <definition name="vistaFormularioRegistro" extends="base-definition">  
        <put-attribute name="title" value="Formulario Registro" />  
        <put-attribute name="body" value="/WEB-INF/views/pages/vistaFormularioRegistro.jsp" />  
    </definition>  
 
-   <!-- Product Page -->
-   <definition name="products" extends="base-definition">  
-       <put-attribute name="title" value="Products" />  
-       <put-attribute name="body" value="/WEB-INF/views/pages/products.jsp" />  
+   <!-- Pagina de login -->
+   <definition name="login" extends="base-definition">  
+       <put-attribute name="title" value="Pagina de login" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />  
    </definition>  
       
-   <!-- Contact-us Page -->
-   <definition name="contactus" extends="base-definition">  
-       <put-attribute name="title" value="Contact Us" />  
-       <put-attribute name="body" value="/WEB-INF/views/pages/contactus.jsp" />  
+   <!-- Sobre la aplicacion -->
+   <definition name="sobreAplicacion" extends="base-definition">  
+       <put-attribute name="title" value="Sobre la aplicacion" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/sobreAplicacion.jsp" />  
+   </definition> 
+   
+   <!-- Sobre la aplicacion -->
+   <definition name="instrucciones" extends="base-definition">  
+       <put-attribute name="title" value="Sobre la aplicacion" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/instrucciones.jsp" />  
    </definition>  
+  
  
 </tiles-definitions>

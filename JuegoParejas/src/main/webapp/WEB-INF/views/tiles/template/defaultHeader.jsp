@@ -1,3 +1,5 @@
-<div>
-    	<h1>Juego de parejas </h1>
-</div>
+	
+		<h1 id="cabecera">
+			<strong>Juego de Parejas</strong>
+		</h1>
+

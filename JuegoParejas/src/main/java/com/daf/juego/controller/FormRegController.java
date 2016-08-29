@@ -5,19 +5,29 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.daf.juego.dto.DatosUsuario;
+import com.daf.juego.validations.ValidadorDatosUsuario;
 
 @Controller
 @RequestMapping("/")
 public class FormRegController {
 
-	@RequestMapping(value = { "/formularioRegistro"}, method = RequestMethod.GET)
+	@RequestMapping(value = { "/vistaFormularioRegistro"}, method = RequestMethod.GET)
 	public String verFormulario(ModelMap model) {
 		return "vistaFormularioRegistro";
 	}
+	
+	@InitBinder
+    protected void initBinder(WebDataBinder binder) {
+        binder.setValidator(new ValidadorDatosUsuario()); // registramos el validador
+    }
+	
 	
 	@RequestMapping(value = "/manejar", method = RequestMethod.POST)
 	public String manejarFormularioYaValidado(@Valid DatosUsuario datosUsuario, BindingResult result) {
@@ -30,14 +40,9 @@ public class FormRegController {
 		//Si no hay errores, manejamos los datos validados...
 		return "registroOk";
 	}
-
-	/*@RequestMapping(value = { "/products"}, method = RequestMethod.GET)
-	public String productsPage(ModelMap model) {
-		return "products";
+	
+	@ModelAttribute("datosCoche")
+	public DatosUsuario populateForm() {
+	     return new DatosUsuario(); // creamos el bean para que se pueda popular
 	}
-
-	@RequestMapping(value = { "/contactus"}, method = RequestMethod.GET)
-	public String contactUsPage(ModelMap model) {
-		return "contactus";
-	}*/
 }
