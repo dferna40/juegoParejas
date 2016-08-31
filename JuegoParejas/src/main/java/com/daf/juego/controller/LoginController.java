@@ -25,11 +25,11 @@ public class LoginController {
 		
 		//Si hay errores volvemos a la vista del formulario
 		if(result.hasErrors()){
-			return "vistaFormularioRegistro";
+			return "login";
 		}
 		
 		//Si no hay errores, manejamos los datos validados...
-		return "registroOk";
+		return "loginOk";
 	}
 	
 	@ModelAttribute("datosUsuario")
