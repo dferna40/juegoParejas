@@ -1,7 +1,7 @@
 
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<form:form method="post" action="/manejar" commandName="datosUsuario">
+<form:form method="post" action="${pageContext.request.contextPath}/manejarRegistro" commandName="datosUsuario">
 	<h1>Rellena estos datos para realizar el registro en el juego:</h1>
 	<table>
 		<tbody>

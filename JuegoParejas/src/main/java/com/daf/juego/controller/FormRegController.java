@@ -23,13 +23,13 @@ public class FormRegController {
 		return "vistaFormularioRegistro";
 	}
 	
-	@InitBinder
-    protected void initBinder(WebDataBinder binder) {
-        binder.setValidator(new ValidadorDatosUsuario()); // registramos el validador
-    }
+//	@InitBinder
+//    protected void initBinder(WebDataBinder binder) {
+//        binder.setValidator(new ValidadorDatosUsuario()); // registramos el validador
+//    }
 	
 	
-	@RequestMapping(value = "/manejar", method = RequestMethod.POST)
+	@RequestMapping(value = "/manejarRegistro", method = RequestMethod.POST)
 	public String manejarFormularioYaValidado(@Valid DatosUsuario datosUsuario, BindingResult result) {
 		
 		//Si hay errores volvemos a la vista del formulario

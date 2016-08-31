@@ -23,7 +23,14 @@
    <definition name="vistaFormularioRegistro" extends="base-definition">  
        <put-attribute name="title" value="Formulario Registro" />  
        <put-attribute name="body" value="/WEB-INF/views/pages/vistaFormularioRegistro.jsp" />  
+   </definition> 
+   
+   <!-- Registro correcto (Prueba)-->
+   <definition name="registroOk" extends="base-definition">  
+       <put-attribute name="title" value="Sobre la aplicacion" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/registroOk.jsp" />  
    </definition>  
+   
 
    <!-- Pagina de login -->
    <definition name="login" extends="base-definition">  
