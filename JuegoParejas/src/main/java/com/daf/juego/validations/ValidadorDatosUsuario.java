@@ -15,12 +15,14 @@ public class ValidadorDatosUsuario implements Validator {
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		
+
 		DatosUsuario datosUsuario = (DatosUsuario) target;
-		
-		// El nombre es obligatoria
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nombre","El nombre es obligatorio");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "clave", "La clave no puede ser vacia");
+
+		// El usuario es obligatorio
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nombre", "field.nombre.required",
+				"El nombre es obligatorio");
+		// La contraseña no debe estar vacia
+		ValidationUtils.rejectIfEmpty(errors, "clave", "field.clave.required", "Vuelva a introducir la contraseña");
 	}
 
 }

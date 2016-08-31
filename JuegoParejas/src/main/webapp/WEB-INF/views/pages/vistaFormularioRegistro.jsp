@@ -1,17 +1,17 @@
 
 
-<c:url value="/formularioRegistro/manejar" var="destino" />
-<form:form method="post" action="${destino}" commandName="datosUsuario">
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<form:form method="post" action="/manejar" commandName="datosUsuario">
 	<h1>Rellena estos datos para realizar el registro en el juego:</h1>
 	<table>
 		<tbody>
 			<tr>
-				<td>Nombre:</td>
+				<td>Nombre </td>
 				<td><form:input path="nombre" /></td>
 				<td><form:errors path="nombre" cssClass="campoConError" /></td>
 			</tr>
 			<tr>
-				<td>Clave:</td>
+				<td>Clave </td>
 				<td><form:input path="clave" /></td>
 				<td><form:errors path="clave" cssClass="campoConError" /></td>
 			</tr>

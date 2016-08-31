@@ -18,8 +18,8 @@ import com.daf.juego.validations.ValidadorDatosUsuario;
 @RequestMapping("/")
 public class FormRegController {
 
-	@RequestMapping(value = { "/vistaFormularioRegistro"}, method = RequestMethod.GET)
-	public String verFormulario(ModelMap model) {
+	@RequestMapping(value = "/vistaFormularioRegistro", method = RequestMethod.GET)
+	public String verFormulario() {
 		return "vistaFormularioRegistro";
 	}
 	
@@ -41,7 +41,7 @@ public class FormRegController {
 		return "registroOk";
 	}
 	
-	@ModelAttribute("datosCoche")
+	@ModelAttribute("datosUsuario")
 	public DatosUsuario populateForm() {
 	     return new DatosUsuario(); // creamos el bean para que se pueda popular
 	}
