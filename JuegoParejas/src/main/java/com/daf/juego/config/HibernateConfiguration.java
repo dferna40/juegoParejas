@@ -16,15 +16,29 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+/**
+ * Clase de configuración de hibernate sustituye al archivo de configuracion hibernate.cfg.xml
+ * @author David Fernandez Ramirez
+ *
+ */
 @Configuration
 @EnableTransactionManagement
 @ComponentScan({ "com.daf.juego.config" })
 @PropertySource(value = { "classpath:application.properties" })
 public class HibernateConfiguration {
 
+	/**
+	 *  Esta es la forma habitual de establecer un Hibernate SessionFactory compartida en un contexto de aplicación de Spring, 
+	 *  en el SessionFactory se puede pasar objetos de acceso a datos basados en Hibernate a través de la inyección de dependencia.
+	 */
 	@Autowired
 	private Environment environment;
 
+	/**
+	 *  Esta es la forma habitual de compartir en Hibernate el SessionFactory compartida en un contexto de aplicación de Spring, 
+	 *  en el SessionFactory se pueden pasar objetos de acceso a datos basados en Hibernate a través de la inyección de dependencias.
+	 *  @return sessionFactory
+	 */
 	@Bean
 	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
@@ -34,6 +48,10 @@ public class HibernateConfiguration {
 		return sessionFactory;
 	}
 
+	/**
+	 * Establece la configuracion para que Hibernate pueda acceder a la base de datos.
+	 * @return dataSource
+	 */
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -44,6 +62,10 @@ public class HibernateConfiguration {
 		return dataSource;
 	}
 	
+	/**
+	 * Establece la configuracion para que Hibernate pueda acceder a la base de datos.
+	 * @return properties
+	 */
 	private Properties hibernateProperties() {
         Properties properties = new Properties();
         properties.put("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));
@@ -52,6 +74,11 @@ public class HibernateConfiguration {
         return properties;        
     }
 	
+	/**
+	 * Metodo que configura el gestor de transacciones de Hibernate
+	 * @param SessionFactory
+	 * @return txManager
+	 */
 	@Bean
     @Autowired
     public HibernateTransactionManager transactionManager(SessionFactory s) {

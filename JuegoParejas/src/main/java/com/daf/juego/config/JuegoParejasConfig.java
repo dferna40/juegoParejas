@@ -10,14 +10,19 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
-
+/**
+ * Clase de configuracion de Spring sustituye al archivo de configuracion web.xml
+ * @author David Fernandez Ramirez
+ *
+ */
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.daf.juego")
 public class JuegoParejasConfig extends WebMvcConfigurerAdapter{
 
 	/**
-     * Configure TilesConfigurer.
+     * Configura TilesConfigurer.
+     * @return tilesConfigurer
      */
 	@Bean
 	public TilesConfigurer tilesConfigurer(){
@@ -28,7 +33,7 @@ public class JuegoParejasConfig extends WebMvcConfigurerAdapter{
 	}
 
 	/**
-     * Configure ViewResolvers to deliver preferred views.
+     * Configura el resolutor de vistas para ofrecer las vistas preferidas.
      */
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {
@@ -37,7 +42,7 @@ public class JuegoParejasConfig extends WebMvcConfigurerAdapter{
 	}
 	
 	/**
-     * Configure ResourceHandlers to serve static resources like CSS/ Javascript etc...
+     * Configurar controladores de recursos para servir recursos estáticos como CSS / Javascript, etc ...
      */
 	
     @Override

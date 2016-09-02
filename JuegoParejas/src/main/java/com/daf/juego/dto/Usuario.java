@@ -13,22 +13,22 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "T_USUARIOS", catalog = "juegobd")
-public class Usuarios implements java.io.Serializable {
+public class Usuario implements java.io.Serializable {
 
-	private int idusuarios;
+	private int idusuario;
 	private String nombre;
 	private String clave;
 	private String email;
 
-	public Usuarios() {
+	public Usuario() {
 	}
 
-	public Usuarios(int idusuarios) {
-		this.idusuarios = idusuarios;
+	public Usuario(int idusuario) {
+		this.idusuario = idusuario;
 	}
 
-	public Usuarios(int idusuarios, String nombre, String clave, String email) {
-		this.idusuarios = idusuarios;
+	public Usuario(int idusuario, String nombre, String clave, String email) {
+		this.idusuario = idusuario;
 		this.nombre = nombre;
 		this.clave = clave;
 		this.email = email;
@@ -37,12 +37,12 @@ public class Usuarios implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "ID", unique = true, nullable = false)
-	public int getIdusuarios() {
-		return this.idusuarios;
+	public int getIdusuario() {
+		return this.idusuario;
 	}
 
-	public void setIdusuarios(int idusuarios) {
-		this.idusuarios = idusuarios;
+	public void setIdusuario(int idusuario) {
+		this.idusuario = idusuario;
 	}
 
 	@Column(name = "NOMBRE", length = 45)
